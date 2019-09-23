@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Selector Depozit/Temperatura</title>
+  <meta name="description" content="Selector Depozit/Temperatura">
+  <meta name="author" content="Sebastian Boar">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  <select id="locatie">
+    <option value="warehouse">Depozit Materii Prime</option>
+    <option value="finished_goods">Depozit Produse Finite</option>
+    <option value="production">Productie</option>
+    <option value="basement">Subsol</option>
+  </select>
+  
+  <select id="interval">
+    <option value="288">Ultimele 24 de ore</option>
+    <option value="2016">Ultima saptamana</option>
+    <option value="60480">Ultimele 30 de zile</option>
+    <option value="725760">Anul trecut</option>
+    <option value="7257600">Fara limita de perioada</option>
+  </select>  
+  
+  <button onclick="getURL()">Afiseaza diagrama</button>
+  
+<script>
+  var getURL = function(){
+    var locatie = document.getElementById('locatie').value;
+    var interval = document.getElementById('interval').value;
+    var URL = '\charts.php?loc=' + locatie + '&timeframe=' + interval;
+    window.location = `${URL}`;
+}
+
+</script>
+</body>
+</html>
+
+

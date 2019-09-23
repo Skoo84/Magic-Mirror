@@ -1,0 +1,329 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "my magic mirror",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetEveryWarehouseName",
+                    "slots": [],
+                    "samples": [
+                        "Which are the avaiable sensors",
+                        "What are the sensor names",
+                        "sensor names"
+                    ]
+                },
+                {
+                    "name": "GetEmployeeReportForGivenDay",
+                    "slots": [
+                        {
+                            "name": "when",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "{when}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Which employees worked {when}",
+                        "Who was at work {when}",
+                        "Who was here {when}",
+                        "Who is here {when}",
+                        "Who is at work {when}",
+                        "Employees working {when}",
+                        "Who is working {when}"
+                    ]
+                },
+                {
+                    "name": "GetSpecificEmployeeForGivenDay",
+                    "slots": [
+                        {
+                            "name": "when",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "{when}"
+                            ]
+                        },
+                        {
+                            "name": "name",
+                            "type": "AMAZON.Person",
+                            "samples": [
+                                "{name}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Where was {name} {when}",
+                        "Find me {name} {when}",
+                        "Where is {name} {when}",
+                        "I'm looking for {name} {when}"
+                    ]
+                },
+                {
+                    "name": "GetEveryEmployeeName",
+                    "slots": [],
+                    "samples": [
+                        "Who are the registered employees",
+                        "List of employees",
+                        "Employee names"
+                    ]
+                },
+                {
+                    "name": "LaunchRequest",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "GetEveryWarehouseTemperature",
+                    "slots": [],
+                    "samples": [
+                        "what is the temperature in each warehouse",
+                        "what is the situation each warehouse",
+                        "all warehouses",
+                        "realtime temperatures for the warehouses",
+                        "realtime humidity information",
+                        "humidity",
+                        "temperature now",
+                        "humidity now",
+                        "temperature"
+                    ]
+                },
+                {
+                    "name": "GetEveryWarehouseAverage",
+                    "slots": [
+                        {
+                            "name": "timeframe",
+                            "type": "AMAZON.DayOfWeek"
+                        }
+                    ],
+                    "samples": [
+                        "average situation",
+                        "average",
+                        "all warehouses average",
+                        "what is the average situation each warehouse ",
+                        "what are the average temperatures on each location",
+                        "what are the average temperatures on each location for the {timeframe}",
+                        "what are the averages in the factory",
+                        "what are the averages in the factory for the {timeframe}",
+                        "what is the situation each warehouse in the last {timeframe}",
+                        "all warehouses average for {timeframe}",
+                        "average situation in the last {timeframe}",
+                        "average for {timeframe}",
+                        "averages for {timeframe}",
+                        "average situation for {timeframe}"
+                    ]
+                },
+                {
+                    "name": "GetSpecificWarehouseAverage",
+                    "slots": [
+                        {
+                            "name": "timeframe",
+                            "type": "AMAZON.DayOfWeek"
+                        },
+                        {
+                            "name": "warehouse",
+                            "type": "AMAZON.Room"
+                        }
+                    ],
+                    "samples": [
+                        "what are the averages for the {warehouse}",
+                        "average situation for {warehouse}",
+                        "average for {warehouse}",
+                        "what is the situation at {warehouse} ",
+                        "what are the averages at {warehouse}",
+                        "what are the averages at {warehouse} for the {timeframe}",
+                        "what is the situation at {warehouse} the last {timeframe}",
+                        "average for {warehouse} {timeframe}",
+                        "average situation {warehouse} the last {timeframe}",
+                        "average for {warehouse} in the {timeframe}",
+                        "average situation for {warehouse} {timeframe}"
+                    ]
+                },
+                {
+                    "name": "GetSpecificRealtimeSituation",
+                    "slots": [
+                        {
+                            "name": "warehouse",
+                            "type": "AMAZON.Room"
+                        }
+                    ],
+                    "samples": [
+                        "Tell me about {warehouse}",
+                        "Tell me about the {warehouse}",
+                        "What's happening at {warehouse}",
+                        "What's happening at the {warehouse}",
+                        "What is the current situation at {warehouse}",
+                        "What is the current situation at the {warehouse}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "AMAZON.Room",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "warehouse",
+                                "synonyms": [
+                                    "primary material",
+                                    "primary material warehouse"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "finished_goods",
+                                "synonyms": [
+                                    "finished goods warehouse",
+                                    "finished",
+                                    "finished goods"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AMAZON.DayOfWeek",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "last year",
+                                "synonyms": [
+                                    "this year",
+                                    "last 365 days"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "last month",
+                                "synonyms": [
+                                    "last 30 days"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "last week",
+                                "synonyms": [
+                                    "last 7 days",
+                                    "last seven days"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "today",
+                                "synonyms": [
+                                    "last 24 hours"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "GetEmployeeReportForGivenDay",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "when",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1293473803064.327510551049"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "GetSpecificEmployeeForGivenDay",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "when",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.718435909044.448065341727"
+                            }
+                        },
+                        {
+                            "name": "name",
+                            "type": "AMAZON.Person",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.718435909044.1060139443710"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1293473803064.327510551049",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please specify the date You're looking for"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.718435909044.1060139443710",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please let me know the person You've looking for"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Who are You looking for?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Please specify the persone You've looking for"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.718435909044.448065341727",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please let me know the day've looking for"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Please specify the day You've interested"
+                    }
+                ]
+            }
+        ]
+    }
+}
